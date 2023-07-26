@@ -79,7 +79,7 @@
 #endif
 
 #ifdef ENABLE_ALL_OPTIONS
-# define OPTION_STRING	"I:46hVcgsEKYao:v:H:d:P:f:U:p:C:L:A:t:T:m:z:S:l:b:B:e:k:y:O:R:N:D:Z"
+# define OPTION_STRING	"v:I:46hVcgsEKYao:H:d:P:f:U:p:C:L:A:t:T:m:z:S:l:b:B:e:k:y:O:R:N:D:Z"
 #else
 # define OPTION_STRING	"I:46hVvcH:f:U:p:d:S:D:"
 #endif
@@ -455,6 +455,7 @@ ipmi_main(int argc, char ** argv,
             if (verbose > LOG_DEBUG) {
                 verbose = LOG_DEBUG;
             }
+
 			log_level_set(verbose);
 			if (verbose == 2) {
 				/* add version info to debug output */
@@ -861,7 +862,7 @@ ipmi_main(int argc, char ** argv,
 	}
 
 	/* load the IANA PEN registry */
-	//ipmi_oem_info_init();
+	//ipmi_oem_info_init(); //
 
 	/* run OEM setup if found */
 	if (oemtype &&
@@ -952,7 +953,7 @@ ipmi_main(int argc, char ** argv,
 		ipmi_main_intf->my_addr = addr;
 	}
 
-    ipmi_main_intf->target_channel = target_channel ;
+    ipmi_main_intf->target_channel = target_channel ; // double CPU SOL channel 
 	ipmi_main_intf->target_addr = ipmi_main_intf->my_addr;
 
 	/* If bridging addresses are specified, handle them */
