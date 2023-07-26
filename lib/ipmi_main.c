@@ -846,7 +846,7 @@ ipmi_main(int argc, char ** argv,
 			lprintf(LOG_ERR, "%s: password is longer than 16 bytes.", intfname);
 			rc = -1;
 			goto out_free;
-		} else if (!strcmp(intfname, "lanplus") && strlen(password) > 20) {
+		} else if (!strcmp(intfname, "lanp") && strlen(password) > 20) {
 			lprintf(LOG_ERR, "%s: password is longer than 20 bytes.", intfname);
 			rc = -1;
 			goto out_free;

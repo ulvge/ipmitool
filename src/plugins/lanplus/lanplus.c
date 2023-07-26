@@ -127,7 +127,7 @@ static void ipmi_lanp_set_max_rp_data_size(struct ipmi_intf * intf, uint16_t siz
 static uint8_t bridgePossible = 0;
 
 struct ipmi_intf ipmi_lanplus_intf = {
-	.name = "lanplus",
+	.name = "lanp",
 	.desc = "IPMI v2.0 RMCP+ LAN Interface",
 	.setup = ipmi_lanplus_setup,
 	.open = ipmi_lanplus_open,
