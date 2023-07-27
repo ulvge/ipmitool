@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cygwin-gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "D:\\3misc\\5ipmi\\ipmitool-IPMITOOL\\ipmitool\\src\\.libs\\ipmitool.exe",
+            "args": [
+                //"-H 192.168.0.100 -U admin -P admin -I lanp -p 623 -b 0 sol activate",
+                "-H",
+                "192.168.0.100",
+                "-U",
+                "admin",
+                "-P",
+                "admin",
+                "-I",
+                "lanp",
+                "-p",
+                "623",
+                "-b",
+                "1",
+                "sol",
+                "activate",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\tools\\cygwin\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

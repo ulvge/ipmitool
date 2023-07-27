@@ -3449,6 +3449,7 @@ ipmi_lanplus_open(struct ipmi_intf * intf)
 	struct ipmi_session_params *params;
 	struct ipmi_session *session;
 
+	auth_cap.v20_data_available = false;
 	if (!intf)
 		return -1;
 

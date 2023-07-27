@@ -9,7 +9,7 @@
 *.lo
 *.la
 *.*~
-Makefile
+#Makefile
 Makefile.in
 aclocal.m4
 autom4te.cache
