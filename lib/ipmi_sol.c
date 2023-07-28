@@ -1695,7 +1695,7 @@ ipmi_sol_activate(struct ipmi_intf * intf, int looptest, int interval,
 		int instance)
 {
 	struct ipmi_rs * rsp;
-	struct ipmi_rq   req;
+	struct ipmi_rq   req; // ActivatePayloadReq_T
 	struct activate_payload_rsp ap_rsp;
 	uint8_t    data[6];
 	uint8_t    bSolEncryption     = 1;
@@ -1760,7 +1760,7 @@ ipmi_sol_activate(struct ipmi_intf * intf, int looptest, int interval,
 		data[2] |= IPMI_SOL_BMC_ASSERTS_CTS_MASK_FALSE;
 	}
 	
-	data[3] = intf->target_channel;
+	data[3] = 0x00; /* reserved */
 	data[4] = 0x00; /* reserved */
 	data[5] = 0x00; /* reserved */
 
